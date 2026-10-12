@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Water Tracking - MealCampus</title>
+
+    <link rel="stylesheet" href="/css/water-tracking.css">
+</head>
+
+<body>
+
+    <div class="water-container">
+
+        <div class="water-box">
+
+            <h1>MealCampus</h1>
+
+            <h2>Water Tracking 💧</h2>
+
+            <p class="subtitle">
+                Track your daily water intake and stay hydrated.
+            </p>
+
+            <!-- Today's Goal -->
+            <div class="water-card goal-card">
+
+                <span class="card-label">
+                    Today's Goal
+                </span>
+
+                <strong id="waterGoal">
+                    -- L
+                </strong>
+
+            </div>
+
+            <!-- Consumed -->
+            <div class="water-card consumed-card">
+
+                <span class="card-label">
+                    Consumed
+                </span>
+
+                <strong id="waterConsumed">
+                    0.00 L
+                </strong>
+
+            </div>
+
+            <!-- Remaining -->
+            <div class="water-card remaining-card">
+
+                <span class="card-label">
+                    Remaining
+                </span>
+
+                <strong id="waterRemaining">
+                    -- L
+                </strong>
+
+            </div>
+
+            <!-- Progress -->
+            <div class="progress-section">
+
+                <div class="progress-header">
+                    <span>Today's Progress</span>
+
+                    <strong id="waterPercentage">
+                        0%
+                    </strong>
+                </div>
+
+                <div class="progress-bar">
+
+                    <div
+                        id="waterProgress"
+                        class="progress-fill">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Add Water -->
+            <div class="add-water-section">
+
+                <h3>Add Water</h3>
+
+                <p>
+                    Select how much water you drank.
+                </p>
+
+                <div class="water-buttons">
+
+                    <button
+                        type="button"
+                        class="water-btn"
+                        data-amount="250">
+                        + 250 ml
+                    </button>
+
+                    <button
+                        type="button"
+                        class="water-btn"
+                        data-amount="500">
+                        + 500 ml
+                    </button>
+
+                    <button
+                        type="button"
+                        class="water-btn"
+                        data-amount="750">
+                        + 750 ml
+                    </button>
+
+                    <button
+                        type="button"
+                        class="water-btn"
+                        data-amount="1000">
+                        + 1 L
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div id="waterMessage" class="water-message"></div>
+
+            <div class="water-actions">
+
+                <a href="/dashboard.html">
+                    ← Back to Dashboard
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/js/water-tracking.js"></script>
+
+</body>
+</html>

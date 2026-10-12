@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Log Food - MealCampus</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        /* =========================
+           FOOD SEARCH + DROPDOWN
+           ========================= */
+
+        .food-search-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        #foodSearch {
+            width: 100%;
+            padding: 12px 45px 12px 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        #foodSearch:focus {
+            outline: none;
+            border-color: #6ee7a8;
+        }
+
+        .food-dropdown-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            width: 32px;
+            height: 32px;
+
+            border: none;
+            background: transparent;
+
+            cursor: pointer;
+            font-size: 16px;
+
+            color: #555;
+        }
+
+        .food-dropdown-btn:hover {
+            color: #222;
+        }
+
+        .food-results {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: calc(100% + 5px);
+
+            max-height: 250px;
+            overflow-y: auto;
+
+            background: white;
+
+            border: 1px solid #ddd;
+            border-radius: 8px;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+
+            z-index: 1000;
+
+            display: none;
+        }
+
+        .food-result-item {
+            padding: 12px 14px;
+
+            border-bottom: 1px solid #eeeeee;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+        .food-result-item:hover {
+            background: #f0fff5;
+        }
+
+        .food-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .food-result-name {
+            font-weight: 600;
+        }
+
+        .food-result-details {
+            margin-top: 4px;
+
+            font-size: 13px;
+
+            color: #666;
+        }
+
+        .no-food-results {
+            padding: 14px;
+
+            text-align: center;
+
+            color: #777;
+        }
+
+        .selected-food {
+            margin-top: 10px;
+
+            padding: 10px 12px;
+
+            background: #eafff0;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="food-container">
+
+        <div class="food-box">
+
+            <h1>MealCampus</h1>
+
+            <h2>Log Your Food 🍽️</h2>
+
+            <p>
+                Add the foods you have eaten in this meal.
+            </p>
+
+
+            <!-- =========================
+                 MEAL SELECTION
+                 ========================= -->
+
+            <div class="form-group">
+
+                <label for="mealType">
+                    Meal
+                </label>
+
+                <select id="mealType" required>
+
+                    <option value="">
+                        Select Meal
+                    </option>
+
+                    <option value="breakfast">
+                        Breakfast
+                    </option>
+
+                    <option value="lunch">
+                        Lunch
+                    </option>
+
+                    <option value="snack">
+                        Snack
+                    </option>
+
+                    <option value="dinner">
+                        Dinner
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- =========================
+                 FOOD SEARCH
+                 ========================= -->
+
+            <div class="form-group">
+
+                <label for="foodSearch">
+                    Food
+                </label>
+
+                <div class="food-search-wrapper">
+
+                    <input
+                        type="text"
+                        id="foodSearch"
+                        placeholder="🔍 Search or select food..."
+                        autocomplete="off"
+                    >
+
+                    <button
+                        type="button"
+                        id="foodDropdownBtn"
+                        class="food-dropdown-btn"
+                        aria-label="Show all foods"
+                    >
+                        ▼
+                    </button>
+
+
+                    <!-- FOOD RESULTS -->
+
+                    <div
+                        id="foodResults"
+                        class="food-results"
+                    ></div>
+
+                </div>
+
+
+                <!-- Selected food information -->
+
+                <div
+                    id="selectedFood"
+                    class="selected-food"
+                    style="display: none;"
+                ></div>
+
+
+                <!-- Hidden food ID -->
+
+                <input
+                    type="hidden"
+                    id="food"
+                    value=""
+                >
+
+            </div>
+
+
+            <!-- =========================
+                 QUANTITY
+                 ========================= -->
+
+            <div class="form-group">
+
+                <label for="quantity">
+                    Quantity
+                </label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    min="0.5"
+                    step="0.5"
+                    value="1"
+                >
+
+                <small>
+                    Enter number of servings
+                </small>
+
+            </div>
+
+
+            <!-- =========================
+                 ADD FOOD
+                 ========================= -->
+
+            <button
+                type="button"
+                id="addFoodBtn"
+            >
+                + Add Food
+            </button>
+
+
+            <!-- =========================
+                 ADDED FOODS
+                 ========================= -->
+
+            <div
+                id="addedFoodsSection"
+                class="added-foods-section"
+                style="display: none;"
+            >
+
+                <h3>
+                    Added Foods
+                </h3>
+
+                <div id="addedFoodsList"></div>
+
+
+                <!-- =========================
+                     MEAL SUMMARY
+                     ========================= -->
+
+                <div class="meal-summary">
+
+                    <h3>
+                        Meal Nutrition
+                    </h3>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Calories
+                        </span>
+
+                        <strong id="totalCalories">
+                            0
+                        </strong>
+
+                        <span>
+                            kcal
+                        </span>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Protein
+                        </span>
+
+                        <strong id="totalProtein">
+                            0
+                        </strong>
+
+                        <span>
+                            g
+                        </span>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Carbohydrates
+                        </span>
+
+                        <strong id="totalCarbohydrates">
+                            0
+                        </strong>
+
+                        <span>
+                            g
+                        </span>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Fat
+                        </span>
+
+                        <strong id="totalFat">
+                            0
+                        </strong>
+
+                        <span>
+                            g
+                        </span>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Fiber
+                        </span>
+
+                        <strong id="totalFiber">
+                            0
+                        </strong>
+
+                        <span>
+                            g
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     SAVE MEAL
+                     ========================= -->
+
+                <button
+                    type="button"
+                    id="saveMealBtn"
+                >
+                    Save Meal
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 BACK
+                 ========================= -->
+
+            <div class="food-actions">
+
+                <a href="/dashboard.html">
+                    ← Back to Dashboard
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="/js/log-food.js"></script>
+
+</body>
+
+</html>

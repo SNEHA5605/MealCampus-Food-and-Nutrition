@@ -1,0 +1,493 @@
+/* ==========================================
+   MEALCAMPUS
+   NUTRITION ANALYSIS
+   ========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+  background: linear-gradient(
+    135deg,
+    #50c08b,
+    #06170c
+ );
+
+    color: #333;
+}
+
+
+/* ==========================================
+   CONTAINER
+   ========================================== */
+
+.analysis-container {
+    width: 100%;
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 30px 25px 60px;
+}
+
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.analysis-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px 25px;
+
+    background: #042214;
+
+    border-radius: 18px;
+
+    border: 1px solid #dcebe0;
+
+    box-shadow:
+        0 8px 25px rgba(40, 100, 68, 0.08);
+
+    margin-bottom: 28px;
+}
+
+.analysis-header h1 {
+    margin: 0;
+
+    color: #8ee8ae;
+
+    font-size: 35px;
+
+    font-weight: 800;
+}
+
+.analysis-header p {
+    margin: 5px 0 0;
+
+    color: #7a887f;
+
+    font-size: 25px;
+}
+
+.analysis-header a {
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
+    background: #9cf7b7;
+
+    color: #176b35;
+
+    text-decoration: none;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.analysis-header a:hover {
+    background: #dcefe2;
+}
+
+
+/* ==========================================
+   INTRO
+   ========================================== */
+
+.analysis-intro {
+    margin-bottom: 32px;
+}
+
+.analysis-intro h2 {
+    margin: 0 0 8px;
+
+    color: #021709;
+
+    font-size: 35px;
+}
+
+.analysis-intro p {
+    margin: 0;
+
+    color: black;
+
+    font-size: 25px;
+}
+
+
+/* ==========================================
+   SECTION HEADINGS
+   ========================================== */
+
+.nutrient-section h2,
+.summary-section h2,
+.suggestions-section h2 {
+    margin: 0 0 18px;
+
+    color: #062b13;
+
+    font-size: 23px;
+}
+
+
+/* ==========================================
+   NUTRIENT GRID
+   ========================================== */
+
+.nutrient-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 35px;
+}
+
+
+/* ==========================================
+   NUTRIENT CARD
+   ========================================== */
+
+.nutrient-card {
+    padding: 23px;
+
+    background: #d2fed4;
+
+    border-radius: 17px;
+
+    border: 1px solid #deebe2;
+
+    box-shadow:
+        0 7px 20px rgba(40, 100, 68, 0.08);
+
+    transition: 0.3s;
+}
+
+.nutrient-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 27px rgba(40, 100, 68, 0.14);
+}
+
+.nutrient-card-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.nutrient-name {
+    color: #37433b;
+
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+.nutrient-status {
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+/* Statuses */
+
+.status-low {
+    background: #fff3cd;
+
+    color: #856404;
+}
+
+.status-good {
+    background: #e1f5e7;
+
+    color: #28743b;
+}
+
+.status-high {
+    background: #fde8e8;
+
+    color: #b42323;
+}
+
+
+/* ==========================================
+   NUMBERS
+   ========================================== */
+
+.nutrient-values {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 5px;
+
+    margin-bottom: 13px;
+}
+
+.consumed-value {
+    color: #176b35;
+
+    font-size: 27px;
+
+    font-weight: 800;
+}
+
+.target-value {
+    color: black;
+
+    font-size: 20px;
+}
+
+
+/* ==========================================
+   PROGRESS BAR
+   ========================================== */
+
+.analysis-progress {
+    width: 100%;
+
+    height: 23px;
+
+    background: black;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 8px;
+}
+
+.analysis-progress-fill {
+    height: 100%;
+
+    width: 0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2e8b47,
+            #65bd78
+        );
+
+    border-radius: 20px;
+
+    transition: width 0.7s ease;
+}
+
+.nutrient-percentage {
+    color: #525654;
+
+    font-size: 18px;
+}
+
+
+/* ==========================================
+   SUMMARY
+   ========================================== */
+
+.summary-section {
+    padding: 27px;
+    background: #042214;
+    border-radius: 18px;
+    border: 1px solid #deebe2;
+    box-shadow:
+        0 7px 20px rgba(40, 100, 68, 0.07);
+    margin-bottom: 35px;
+}
+.summary-section h2{
+ color:aliceblue;
+}
+
+.summary-section p{
+    color:rgb(152, 199, 158);
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid #edf1ee;
+    color: #8ee8ae;
+    line-height: 1.5;
+    font-size: 25px;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-icon {
+    font-size: 19px;
+}
+
+
+/* ==========================================
+   SUGGESTIONS
+   ========================================== */
+
+.suggestions-section {
+    margin-bottom: 20px;
+}
+
+.suggestion-intro {
+    color: #d8e2dd;
+    margin-bottom: 20px;
+}
+
+.suggestions-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, 1fr);
+    gap: 18px;
+}
+
+.suggestion-card {
+    padding: 22px;
+    background: #d2fed4;
+    border-radius: 17px;
+    border: 1px solid #deebe2;
+    box-shadow:
+        0 7px 20px rgba(40, 100, 68, 0.07);
+    transition: 0.3s;
+}
+
+.suggestion-card:hover {
+    transform: translateY(-5px);
+}
+
+.suggestion-card h3 {
+    margin: 0 0 8px;
+    color: #176b35;
+    font-size: 30px;
+}
+
+.suggestion-card p {
+    margin: 0 0 12px;
+    color: black;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.suggestion-reason {
+    color: #000000;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 850px) {
+
+    .nutrient-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .suggestions-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .analysis-container {
+        padding: 20px 15px 40px;
+    }
+
+    .analysis-header {
+        padding: 16px;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .analysis-header h1 {
+        font-size: 24px;
+    }
+
+    .analysis-header a {
+        font-size: 12px;
+    }
+
+    .nutrient-grid,
+    .suggestions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analysis-intro h2 {
+        font-size: 25px;
+    }
+}
+
+/* ==========================================
+   ADD TO FOOD LOG BUTTON
+   ========================================== */
+
+.add-food-button {
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 11px 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #9af5b8;
+
+    color: #06452d;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.add-food-button:hover {
+
+    background: #c1ffd4;
+
+    transform: translateY(-1px);
+}
+
+
+.add-food-button:active {
+
+    transform: translateY(0);
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - MealCampus</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Header -->
+        <header class="dashboard-header">
+
+            <div>
+                <h1>MealCampus</h1>
+                <p>Student Nutrition & Diet Tracking</p>
+            </div>
+
+            <button onclick="logout()" class="logout-btn">
+                Logout
+            </button>
+
+        </header>
+
+
+        <!-- Today's Nutrition -->
+        <section class="nutrition-section">
+
+            <h2>Today's Nutrition</h2>
+
+            <div class="nutrition-grid">
+
+                <!-- Calories -->
+                <div class="nutrition-card">
+
+                    <h3>🔥 Calories</h3>
+
+                    <div class="nutrition-value">
+                        <span id="caloriesConsumed">0</span>
+                        /
+                        <span id="caloriesTarget">--</span>
+                        kcal
+                    </div>
+
+                    <div class="progress-bar">
+                        <div id="caloriesProgress"></div>
+                    </div>
+
+                    <p>Consumed / Daily Target</p>
+
+                </div>
+
+
+                <!-- Protein -->
+                <div class="nutrition-card">
+
+                    <h3>💪 Protein</h3>
+
+                    <div class="nutrition-value">
+                        <span id="proteinConsumed">0</span>
+                        /
+                        <span id="proteinTarget">--</span>
+                        g
+                    </div>
+
+                    <div class="progress-bar">
+                        <div id="proteinProgress"></div>
+                    </div>
+
+                    <p>Consumed / Daily Target</p>
+
+                </div>
+
+
+                <!-- Carbohydrates -->
+                <div class="nutrition-card">
+
+                    <h3>🍚 Carbohydrates</h3>
+
+                    <div class="nutrition-value">
+                        <span id="carbohydratesConsumed">0</span>
+                        /
+                        <span id="carbohydratesTarget">--</span>
+                        g
+                    </div>
+
+                    <div class="progress-bar">
+                        <div id="carbohydratesProgress"></div>
+                    </div>
+
+                    <p>Consumed / Daily Target</p>
+
+                </div>
+
+
+                <!-- Fat -->
+                <div class="nutrition-card">
+
+                    <h3>🥑 Fat</h3>
+
+                    <div class="nutrition-value">
+                        <span id="fatConsumed">0</span>
+                        /
+                        <span id="fatTarget">--</span>
+                        g
+                    </div>
+
+                    <div class="progress-bar">
+                        <div id="fatProgress"></div>
+                    </div>
+
+                    <p>Consumed / Daily Target</p>
+
+                </div>
+
+
+                <!-- Fiber -->
+                <div class="nutrition-card">
+
+                    <h3>🌾 Fiber</h3>
+
+                    <div class="nutrition-value">
+                        <span id="fiberConsumed">0</span>
+                        /
+                        <span id="fiberTarget">--</span>
+                        g
+                    </div>
+
+                    <div class="progress-bar">
+                        <div id="fiberProgress"></div>
+                    </div>
+
+                    <p>Consumed / Daily Target</p>
+
+                </div>
+
+
+                <!-- Water -->
+                <div class="nutrition-card">
+
+                    <h3>💧 Water</h3>
+
+                    <div class="nutrition-value">
+                        <span id="waterConsumed">0.00</span>
+                        /
+                        <span id="waterTarget">--</span>
+                        L
+                    </div>
+
+                    <div class="progress-bar">
+                        <div id="waterProgress"></div>
+                    </div>
+
+                    <p>Consumed / Daily Target</p>
+
+                    <p>
+                        Remaining:
+                        <span id="waterRemaining">--</span>
+                        L
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MealCampus Features -->
+        <section class="features-section">
+
+            <h2>MealCampus Features</h2>
+
+            <div class="features-grid">
+
+                <!-- Log Food -->
+                <a href="/log-food.html"
+                   class="feature-card feature-card-link">
+
+                    <div class="feature-icon">
+                        🍽️
+                    </div>
+
+                    <h3>Log Food</h3>
+
+                    <p>
+                        Add the foods and meals you eat
+                        throughout the day.
+                    </p>
+
+                </a>
+
+
+                <!-- Nutrition Analysis -->
+                <a href="/nutrition-analysis.html"
+                   class="feature-card feature-card-link">
+
+                    <div class="feature-icon">
+                        📊
+                    </div>
+
+                    <h3>Nutrition Analysis</h3>
+
+                    <p>
+                        Understand your nutrition intake
+                        and identify nutrient gaps.
+                    </p>
+
+                </a>
+
+
+                <!-- Water Tracking -->
+                <a href="/water-tracking.html"
+                   class="feature-card feature-card-link">
+
+                    <div class="feature-icon">
+                        💧
+                    </div>
+
+                    <h3>Water Tracking</h3>
+
+                    <p>
+                        Track your daily water consumption
+                        and hydration target.
+                    </p>
+
+                </a>
+
+
+                <!-- Food History -->
+                <a href="/food-history.html"
+                   class="feature-card feature-card-link">
+
+                    <div class="feature-icon">
+                        📜
+                    </div>
+
+                    <h3>Food History</h3>
+
+                    <p>
+                        View the foods and meals you have
+                        logged today.
+                    </p>
+
+                </a>
+
+
+                <!-- Mess Menu -->
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🍛
+                    </div>
+
+                    <h3>Mess Menu</h3>
+
+                    <p>
+                        Check your mess meals and plan
+                        your nutrition.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- Dashboard JavaScript -->
+    <script src="/js/dashboard.js"></script>
+
+    <!-- Authentication JavaScript -->
+    <script src="/js/auth.js"></script>
+
+</body>
+
+</html>

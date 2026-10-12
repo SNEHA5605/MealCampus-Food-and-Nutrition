@@ -1,0 +1,40 @@
+// const mysql = require("mysql2");
+
+// const db = mysql.createConnection({
+//     host:"localhost",
+//     user:"root",
+//     password:"snehasagade@2148",
+//     database:"mealcampus"
+// });
+
+// db.connect((err)=>{
+//     if(err){
+//         console.log("Database connection failed!");
+//         console.log(err);
+//         return;
+//     }
+//     console.log("MySQL connected successfully!");
+// });
+// module.exports = db;
+require("dotenv").config();
+
+const mysql = require("mysql2");
+
+const db = mysql.createConnection({
+    host: process.env.DB_HOST || "localhost",
+    user: process.env.DB_USER || "root",
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME || "mealcampus"
+});
+
+db.connect((err) => {
+    if (err) {
+        console.log("Database connection failed!");
+        console.log(err);
+        return;
+    }
+
+    console.log("MySQL connected successfully!");
+});
+
+module.exports = db; 

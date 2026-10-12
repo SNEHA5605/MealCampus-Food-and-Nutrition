@@ -1,0 +1,1237 @@
+*{
+    margin:"0";
+    padding:"0";
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: #f7faf8;
+    color: #1f2937;
+}
+
+/* navbar */
+
+.navbar{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    background : white;
+    border-bottom: 1px solid #e5e7eb;
+}
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links a{
+    /* text-decoration: none;
+    color: #374151;
+    font-weight: 500; */
+    text-decoration : none;
+    color: #374151;
+    font-weight:500;
+    padding: 10px;
+}
+
+.nav-links a:hover{
+    color: #16a34a;
+}
+
+.hero{
+ min-height: 550px;
+ display: flex;
+ align-items: center;
+ padding: 60px 8%;
+ background: linear-gradient(
+    135deg,
+    #50c08b,
+    #06170c
+ );
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+/* .hero h1 {
+    font-size: 64px;
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+} */
+ .hero h1{
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+ }
+
+ 
+.hero p{
+    font-size: 20px;
+    line-height: 1.6;
+    color:#011025;
+    margin-bottom: 35px;
+}
+
+.buttons{
+    display: flex;
+    gap: 15px;
+}
+
+.btn{
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.primary{
+    background: rgb(33, 34, 33);
+    color:aliceblue;
+}
+.primary:hover{
+    background: white;
+    color:black;
+}
+
+.secondary{
+    background: rgb(33, 34, 33);
+    color:aliceblue;
+}
+.secondary:hover{
+    background: white;
+    color:black;
+}
+/* .secondary {
+    background: white;
+    color: #16a34a;
+
+    border: 1px solid #16a34a;
+} */
+
+.features{
+    padding:70px 30%;
+    text-align:center;
+}
+.features h2 {
+    font-size: 36px;
+    margin-bottom: 45px;
+    
+}
+
+.feature-card{
+    background: #06170c;
+    color: rgb(174, 167, 167);
+    padding: 35px 25px;
+    border-radius: 20px;
+    border: 1px solid #e5e7eb;
+    transition: 0.10s;
+}
+.feature-card:hover{
+    transform: translate(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+.icon{
+    font-size: 40px;
+    margin-bottom:15px;
+}
+.feature-card h3 {
+    margin-bottom: 10px;
+}
+.feature-card p {
+    color: #6b7280;
+    line-height: 1.5;
+}
+footer {
+    text-align: center;
+    padding: 25px;
+     background: linear-gradient(
+    135deg,
+    #50c08b,
+    #06170c
+ );
+    color: white;
+}
+
+/* responsive */
+@media(max-width: 900px){
+    .feature-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .hero h1 {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 50px 5%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+     .feature-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* login */
+
+.auth-container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    background: linear-gradient(
+    135deg,
+    #50c08b,
+    #06170c
+ );
+}
+.auth-box{
+    width:100%;
+    max-width: 430px;
+    background: #091f13;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.70);
+    text-align: center;
+    /* animation: authBoxAppear 0.6s ease; */
+    animation: authBoxAppear 0.6s ease;
+    /* color:#2e7d32; */
+}
+
+ @keyframes authBoxAppear{
+    from{
+        opacity:0;
+        transform: translateY(25px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+ }
+
+.auth-box h1{
+    color: #2e7d32;
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: 700 ; 
+}
+
+.auth-box h2 {
+    color: grey;
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+.auth-box > p {
+    color: #777;
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+.form-group input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d5d5d5;
+    border-radius: 12px;
+    font-size: 15px;
+    outline:none;
+    transition: all 0.25s ease;
+}
+.form-group input:hover {
+    border-color: #81c784;
+}
+.form-group input:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.12);
+    transform: translateY(-1px);
+}
+.auth-box button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 9px;
+    background: #2e7d32;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.auth-box button:hover {
+    background: #84ce84;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(46, 125, 50, 0.25);
+    color:black;
+}
+.auth-box button:active {
+    transform: translateY(0);
+}
+.auth-box form + p {
+    margin-top: 22px;
+    margin-bottom: 0;
+    color: #777;
+    font-size: 18px;
+}
+.auth-box a {
+    color: #2e7d32;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.auth-box a:hover {
+    color: #a6e4a6;
+    text-decoration: underline;
+}
+/* Responsive */
+
+@media (max-width: 500px) {
+    .auth-container {
+        padding: 20px;
+    }
+    .auth-box {
+        padding: 30px 22px;
+    }
+    .auth-box h1 {
+        font-size: 30px;
+    }
+    .auth-box h2 {
+        font-size: 23px;
+    }
+}
+
+/* signup */
+#signupForm{
+    margin-top:10px;
+}
+/* Signup input animation */
+#signupForm .form-group {
+    animation: signupField 0.5s ease forwards;
+    opacity: 0;
+}
+#signupForm .form-group:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+#signupForm .form-group:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+#signupForm .form-group:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes signupField {
+
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+       to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Signup button */
+
+#signupForm button {
+    margin-top: 5px;
+
+    background: linear-gradient(
+        135deg,
+        #2e7d32,
+        #43a047
+    );
+
+    position: relative;
+    overflow: hidden;
+}
+/* Shine effect on button */
+
+#signupForm button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    transform: skewX(-25deg);
+
+    transition: left 0.5s ease;
+}
+#signupForm button:hover::before {
+    left: 130%;
+}
+
+
+/* Signup button hover */
+
+#signupForm button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(46, 125, 50, 0.30);
+}
+
+
+/* Login link */
+
+.auth-box p a {
+    transition: all 0.25s ease;
+}
+
+.auth-box p a:hover {
+    letter-spacing: 0.3px;
+}
+
+.profile-container{
+    /*   min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    background: linear-gradient(135deg, #f1f8f4, #e5f3eb); */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #468a62, #17422a);
+}
+.profile-box {
+    width: 100%;
+    max-width: 600px;
+    background-color: #09200b;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.10);
+    animation: profileBoxAppear 0.6s ease;
+}
+@keyframes profileBoxAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.profile-box h1 {
+    text-align: center;
+    color: #2e7d32;
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+.profile-box h2 {
+    text-align: center;
+    color: #333;
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+.profile-box > p {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+/* profile form */
+#profileForm .form-group {
+    margin-bottom: 20px;
+}
+
+#profileForm .form-group label {
+    display: block;
+    margin-bottom: 7px;
+    color: #8c8a8a;
+    font-size: 25px;
+    font-weight: 800;
+}
+/* input and select */
+
+#profileForm input,
+#profileForm select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d5d5d5;
+    border-radius: 15px;
+    background: aliceblue;
+    color: #333;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+#profileForm input:hover,
+#profileForm select:hover {
+    border-color: #81c784;
+}
+
+#profileForm input:focus,
+#profileForm select:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.12);
+    transform: translateY(-1px);
+}
+/*  SELECT ARROW */
+#profileForm select {
+    appearance: auto;
+}
+#profileForm button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 9px;
+    background: linear-gradient(
+        135deg,
+        #2e7d32,
+        #43a047
+    );
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+#profileForm button:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 10px 22px rgba(46, 125, 50, 0.28);
+}
+#profileForm button:active {
+    transform: translateY(0);
+}
+/* PROFILE FORM FIELD ANIMATION */
+#profileForm .form-group {
+    opacity: 0;
+    animation: profileFieldAppear 0.5s ease forwards;
+}
+#profileForm .form-group:nth-child(1) {
+    animation-delay: 0.1s;
+}
+#profileForm .form-group:nth-child(2) {
+    animation-delay: 0.2s;
+}
+#profileForm .form-group:nth-child(3) {
+    animation-delay: 0.3s;
+}
+#profileForm .form-group:nth-child(4) {
+    animation-delay: 0.4s;
+}
+#profileForm .form-group:nth-child(5) {
+    animation-delay: 0.5s;
+}
+#profileForm .form-group:nth-child(6) {
+    animation-delay: 0.6s;
+}
+#profileForm .goal-group {
+    margin-top: 25px !important;
+}
+
+@keyframes profileFieldAppear {
+
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* responsive profile */
+@media (max-width: 600px) {
+    .profile-container {
+        padding: 20px 15px;
+    }
+    .profile-box {
+        padding: 30px 22px;
+        border-radius: 16px;
+    }
+    .profile-box h1 {
+        font-size: 30px;
+    }
+    .profile-box h2 {
+        font-size: 23px;
+    }
+}
+
+/* mealcampus dashboard */
+.dashboard-container {
+    min-height: 100vh;
+    padding: 35px 50px;
+    background: linear-gradient(
+    135deg,
+    #50c08b,
+    #06170c
+ );
+    font-family: Arial, sans-serif;
+}
+/* Header */
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:  #042214;
+    padding: 20px 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 40px;
+    color: #538b57;
+}
+.dashboard-header p{
+    color:white;
+}
+.dashboard-header button {
+    background: #e53935;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+}
+.dashboard-header button:hover {
+    background: #c62828;
+    transform: translateY(-2px);
+}
+/* Welcome Section */
+
+.welcome-section {
+    background: #042214;
+    padding: 30px;
+    border-radius: 18px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+.welcome-section h2 {
+    margin-top: 0;
+    color: #538b57;
+    font-size: 35px;
+    
+}
+.welcome-section p {
+    color: white;
+    font-size: 27px;
+}
+/* Nutrition Section */
+
+.nutrition-section {
+    margin-bottom: 35px;
+    font-size:25px;
+}
+
+.nutrition-section > h2 {
+    color: #07320a;
+    margin-bottom: 20px;
+}
+/* Nutrition Cards */
+
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.nutrition-card {
+    background: rgb(173, 239, 200);       
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    transition: 0.3s;
+    border-left: 5px solid #43a047;
+}
+.nutrition-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+.nutrition-card h3 {
+    margin-top: 0;
+    color: black;
+    font-size: 40px;
+}
+.nutrition-card p {
+    font-size: 35px;
+    font-weight: bold;
+    color: #1b5e20;
+    margin: 15px 0;
+}
+.nutrition-card small {
+    color: rgb(17, 42, 17);
+    font-size: 25px;
+}
+/* Dashboard Features */
+
+.dashboard-features {
+    background: transparent;
+}
+
+.dashboard-features > h2 {
+    color: #042c07;
+    margin-bottom: 20px;
+    font-size:40px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);   /* 2 cards per row */
+    gap: 25px;
+}
+
+.feature-card {
+    background:rgb(108, 199, 146);  
+    padding: 28px;
+    border-radius: 20px;
+    min-height: 180px;              /* Bigger cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-top: 5px solid #2e7d32;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(46,125,50,0.2);
+}
+
+.feature-card h3 {
+    font-size: 30px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 25px;
+    color: #272626;
+    line-height: 1.7;
+}
+
+/* MEALCAMPUS LOG FOOD PAGE */
+
+.food-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+   background: linear-gradient(
+    135deg,
+    #50c08b,
+    #06170c
+ );
+    font-family: Arial, sans-serif;
+}
+.food-box {
+    width: 100%;
+    max-width: 500px;
+    background: #042214;
+    padding: 40px;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+.food-box h1 {
+    text-align: center;
+    color: #538b57;
+    margin-top: 0;
+    font-size: 32px;
+}
+
+.food-box h2 {
+    text-align: center;
+    color: #538b57;
+    margin-bottom: 10px;
+}
+.food-box > p {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 22px;
+}
+
+/* Form */
+
+#foodForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #538b57;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #fafafa;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    border-color: #43a047;
+    box-shadow: 0 0 0 3px rgba(67, 160, 71, 0.12);
+    background: white;
+}
+
+.form-group small {
+    color: #888;
+}
+
+
+/* Add Food Button */
+
+#foodForm button {
+    border: none;
+    background: #538b57;
+    color: white;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#foodForm button:hover {
+    background: #2e7d32;
+    transform: translateY(-2px);
+}
+
+
+/* Back to Dashboard */
+
+.food-actions {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.food-actions a {
+    color: #2e7d32;
+    text-decoration: none;
+    font-weight: bold;
+    font-size:25px;
+}
+
+.food-actions a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .nutrition-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-container {
+        padding: 25px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .dashboard-container {
+        padding: 15px;
+    }
+
+    .dashboard-header {
+        padding: 15px 20px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 24px;
+    }
+
+    .nutrition-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-section {
+        padding: 20px;
+    }
+
+    .food-box {
+        padding: 25px;
+    }
+}
+/* ==========================================
+   MULTIPLE FOOD LOGGING
+   ========================================== */
+
+#addFoodBtn {
+    width: 100%;
+
+    margin-top: 5px;
+
+    padding: 14px;
+
+    border: 2px solid #2e8b47;
+
+    border-radius: 12px;
+
+    background: white;
+
+    color: #2e8b47;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#addFoodBtn:hover {
+    background: #eaf7ee;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   ADDED FOODS
+   ========================================== */
+
+.added-foods-section {
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #dcebe0;
+}
+
+.added-foods-section > h3 {
+    margin: 0 0 15px;
+
+    color: #176b35;
+
+    font-size: 20px;
+}
+
+
+.added-food-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px;
+
+    margin-bottom: 10px;
+
+    background: #f5faf7;
+
+    border: 1px solid #dcebe0;
+
+    border-radius: 12px;
+}
+
+
+.food-item-info {
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    gap: 4px;
+}
+
+.food-item-info strong {
+    color: #333;
+
+    font-size: 15px;
+}
+
+.food-item-info small {
+    color: #7c8981;
+
+    font-size: 12px;
+}
+
+
+.food-item-calories {
+    color: #176b35;
+
+    font-weight: bold;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+
+.remove-food-btn {
+    width: 30px;
+    height: 30px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ffe8e8;
+
+    color: #d32f2f;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.remove-food-btn:hover {
+    background: #ffcdd2;
+
+    transform: scale(1.08);
+}
+
+
+/* ==========================================
+   MEAL SUMMARY
+   ========================================== */
+
+.meal-summary {
+    margin-top: 20px;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef8f1,
+            #f8fcf9
+        );
+
+    border-radius: 15px;
+
+    border: 1px solid #d6eadb;
+}
+
+.meal-summary h3 {
+    margin: 0 0 15px;
+
+    color: #176b35;
+
+    font-size: 18px;
+}
+
+
+.summary-row {
+    display: grid;
+
+    grid-template-columns: 1fr auto auto;
+
+    gap: 10px;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #dcebe0;
+
+    color: #66736b;
+
+    font-size: 14px;
+}
+
+.summary-row:last-child {
+    border-bottom: none;
+}
+
+.summary-row strong {
+    color: #176b35;
+
+    min-width: 60px;
+
+    text-align: right;
+}
+
+
+/* ==========================================
+   SAVE MEAL
+   ========================================== */
+
+#saveMealBtn {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #2e8b47;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+#saveMealBtn:hover {
+    background: #176b35;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(46, 139, 71, 0.20);
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    .added-food-item {
+        gap: 8px;
+
+        padding: 12px;
+    }
+
+    .food-item-calories {
+        font-size: 12px;
+    }
+
+    .remove-food-btn {
+        width: 27px;
+        height: 27px;
+    }
+
+}
+
+/* ==========================================
+   NUTRITION PROGRESS BARS
+   ========================================== */
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+
+    margin-top: 12px;
+    margin-bottom: 10px;
+
+    background: #e6eee8;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #2e8b47,
+        #55b86b
+    );
+
+    border-radius: 20px;
+
+    transition:
+        width 0.8s ease;
+}
+
+/* ==========================================
+   DASHBOARD FEATURE LINKS
+   ========================================== */
+
+.feature-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+}
+
+.feature-card-link:hover {
+    transform: translateY(-3px);
+    transition: 0.2s ease;
+}
