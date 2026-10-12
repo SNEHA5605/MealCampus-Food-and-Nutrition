@@ -156,3 +156,36 @@ Open the local URL shown in your terminal. For example, if the server runs on po
 `http://localhost:3000`
 
 The exact port and startup commands depend on the project configuration.
+
+
+
+### 5. Start the Node.js Server
+
+Open a terminal in the project root directory:
+
+```bash
+npm start
+```
+
+### 6. Start the Python Nutrition Service
+
+Open a **second terminal** in the project root directory:
+
+```bash
+cd python
+python app.py
+```
+
+If your system uses the Python launcher on Windows, you can try:
+
+```bash
+py app.py
+```
+
+Install the Python dependencies required by the application before starting the service.
+
+### 7. Open the Application
+
+Open the local URL displayed by the Node.js server in your browser.
+
+If the Python service runs separately, ensure it is running as well and that the Node.js application is configured to communicate with it.
