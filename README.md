@@ -92,3 +92,67 @@ If the Python nutrition service is required, install its dependencies and start 
 ## Author
 
 Sneha Sagade
+
+
+
+## How to Run Locally
+
+### Prerequisites
+
+Install the following before running the project:
+
+- [Node.js and npm](https://nodejs.org/)
+- [Git](https://git-scm.com/)
+- MySQL
+- Python 3 (for the nutrition service)
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/SNEHA5605/MealCampus-Food-and-Nutrition.git
+cd MealCampus-Food-and-Nutrition
+```
+
+### 2. Install Node.js Dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure Environment Variables
+
+Create a `.env` file in the project root directory. Configure the following variables with your local MySQL settings:
+
+```env
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_mysql_password
+DB_NAME=mealcampus
+```
+
+Replace `your_mysql_password` with your local MySQL password. Never upload your `.env` file or database credentials to GitHub.
+
+### 4. Set Up the Database
+
+- Start your MySQL server.
+- Create the `mealcampus` database if it does not already exist.
+- Import the SQL script from `database/messmate.sql`.
+- Ensure the database configuration matches your `.env` values.
+
+### 5. Start the Application
+
+Check `package.json` for the available start script, then run:
+
+```bash
+npm start
+```
+
+If the Python nutrition service is required, install its dependencies and start it according to the application's configuration.
+
+### 6. Open the Application
+
+Open the local URL shown in your terminal. For example, if the server runs on port 3000:
+
+`http://localhost:3000`
+
+The exact port and startup commands depend on the project configuration.
